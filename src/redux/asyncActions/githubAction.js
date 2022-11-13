@@ -13,3 +13,4 @@ export const getRepoData = (username) => async (dispatch) => {
         dispatch(addError(err.response.data.message));
     }
 };
+

@@ -1,7 +1,7 @@
 import React from 'react'
 import { getRepoData } from '../redux/asyncActions/githubAction'
-import { useSelector, useDispatch } from "react-redux";
-import { Box, Input,Text, Heading, Button, HStack } from '@chakra-ui/react';
+import {  useDispatch } from "react-redux";
+import { Box, Input, Heading, Button, HStack } from '@chakra-ui/react';
 
 
 const SearchBar = ({username, setUsername}) => {
@@ -22,7 +22,7 @@ const SearchBar = ({username, setUsername}) => {
       <HStack>
         <Input 
               w={300}
-              placeholder="Search"
+              placeholder="Enter username"
               type="text" 
               onChange={(event) => {onChange(event)}}
               onKeyUp={(event) => {onChange(event)}}

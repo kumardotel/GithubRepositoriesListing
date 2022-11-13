@@ -3,7 +3,6 @@ import { Text, Box } from '@chakra-ui/react';
 import SearchBar from '../components/SearchBar';
 import Results from '../components/Results';
 import { useSelector } from "react-redux";
-import Sort from '../components/Sort';
 
 const SearchRepo = () => {
     const githubState = useSelector((state) => state.githubReducer);
@@ -15,7 +14,7 @@ const SearchRepo = () => {
     <Box p={5}>
         <Box style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <SearchBar username={username} setUsername={setUsername}/>
-            <Sort/>
+            {/* <Sort/> */}
 
         </Box>
       <Results/>

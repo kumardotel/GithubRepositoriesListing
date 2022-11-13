@@ -4,11 +4,18 @@
 A web application for exploring Github through its unauthenticated APIs.
 
 
+## Technologies Used
+
+- React JS
+- Redux toolkit
+- Chakra UI
+
+
 ## Features
 
 - Search for list of repositories
 - Sort the result
-- Details of repository
+- Can view the details of repository
 
 ## API Reference
 
