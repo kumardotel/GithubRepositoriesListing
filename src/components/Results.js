@@ -1,6 +1,6 @@
 import React, {useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Flex, Select } from '@chakra-ui/react';
+import { Box, Flex, Select, Spinner } from '@chakra-ui/react';
 import UserInfoCard from './RepoInfoCard';
 import Pagination from './Pagination';
 
@@ -8,7 +8,8 @@ import { addRepoInfo } from '../redux/slices/githubSlice';
 
 const Results = () => {
     const githubState = useSelector((state) => state.githubReducer);
-    var reposInfo = githubState.reposInfo;
+    const reposInfo = githubState.reposInfo;
+    const loading = githubState.isLoading;
     const [currentPage, setCurrentPage] = useState(1)
     const repoPerPage = 8;
     const lastRepoIndex = currentPage * repoPerPage;
@@ -28,7 +29,6 @@ const Results = () => {
             arrayForSort.sort((a, b) => b.forks_count - a.forks_count);
         }
         dispatch(addRepoInfo(arrayForSort))
-        
     }
 
   return (
@@ -48,7 +48,19 @@ const Results = () => {
                         {currentRepos.map((repo) => <UserInfoCard repo={repo} key={repo.id}/>)}
                     </Flex>
                     <Pagination totalRepos={reposInfo.length} repoPerPage={repoPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+                   
                 </Box>
+            )
+        }
+        {
+            loading && (
+            <Spinner
+                thickness='4px'
+                speed='0.65s'
+                emptyColor='gray.200'
+                color='blue.500'
+                size='xl'
+                />
             )
         }
     </Box>

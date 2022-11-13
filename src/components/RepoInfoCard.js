@@ -10,7 +10,7 @@ const RepoInfoCard = ({repo}) => {
   return (
     <Box width={280} m={5} p={2} px={3} borderWidth={1} borderColor="#F3EEF4" borderRadius={5}>
       <Text fontSize={20} mb={2}>
-      <Link to={`/repo-details/${repo.id}`}>{repo.name}</Link>
+        <Link to={`/repo-details/${repo.id}`}>{repo.name}</Link>
       </Text>
       
       <HStack><BiUser/><Text> {repo.owner.login}</Text></HStack>
@@ -24,9 +24,6 @@ const RepoInfoCard = ({repo}) => {
     </Box>
   )
 }
-
-
-
 
 
 export default RepoInfoCard
