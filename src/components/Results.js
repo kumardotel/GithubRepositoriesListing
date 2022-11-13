@@ -10,7 +10,7 @@ const Results = () => {
     const githubState = useSelector((state) => state.githubReducer);
     var reposInfo = githubState.reposInfo;
     const [currentPage, setCurrentPage] = useState(1)
-    const [repoPerPage, setRepoPerPage] = useState(8)
+    const repoPerPage = 8;
     const lastRepoIndex = currentPage * repoPerPage;
     const firstRepoIndex = lastRepoIndex - repoPerPage; 
     const currentRepos = reposInfo.slice(firstRepoIndex, lastRepoIndex)
@@ -44,15 +44,13 @@ const Results = () => {
                         </Select>
                     </Box>
                     
-                <Flex flexWrap="wrap" direction="row"  justify="between">
-                    {currentRepos.map((repo) => <UserInfoCard repo={repo} key={repo.id}/>)}
-                </Flex>
-                <Pagination totalRepos={reposInfo.length} repoPerPage={repoPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+                    <Flex flexWrap="wrap" direction="row"  justify="between">
+                        {currentRepos.map((repo) => <UserInfoCard repo={repo} key={repo.id}/>)}
+                    </Flex>
+                    <Pagination totalRepos={reposInfo.length} repoPerPage={repoPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
                 </Box>
-                
             )
         }
-        
     </Box>
   )
 }

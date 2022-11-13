@@ -6,7 +6,6 @@ import { BsStar, BsEye } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 
-
 const RepoInfoCard = ({repo}) => {
   return (
     <Box width={280} m={5} p={2} px={3} borderWidth={1} borderColor="#F3EEF4" borderRadius={5}>
@@ -25,5 +24,9 @@ const RepoInfoCard = ({repo}) => {
     </Box>
   )
 }
+
+
+
+
 
 export default RepoInfoCard

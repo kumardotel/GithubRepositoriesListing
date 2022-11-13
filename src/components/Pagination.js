@@ -1,5 +1,7 @@
 import React from 'react'
 import { Box, Button } from '@chakra-ui/react';
+
+
  
 const Pagination = ({totalRepos, repoPerPage, setCurrentPage, currentPage}) => {
     let pages = [];
@@ -16,5 +18,8 @@ const Pagination = ({totalRepos, repoPerPage, setCurrentPage, currentPage}) => {
     </Box>
   )
 }
+
+
+
 
 export default Pagination

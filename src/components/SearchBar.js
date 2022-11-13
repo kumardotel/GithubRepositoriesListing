@@ -37,4 +37,7 @@ const SearchBar = ({username, setUsername}) => {
   )
 }
 
+
+
+
 export default SearchBar
