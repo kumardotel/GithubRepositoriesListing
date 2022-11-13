@@ -20,7 +20,7 @@ const RepoInfoCard = ({repo}) => {
         <HStack><AiOutlineFork/><Text>{repo.forks_count}</Text></HStack>
       </HStack>
       <Text fontSize='sm' mt={1}>{repo.description}</Text>
-      <Text fontSize='xs' mt={2}>{repo.updated_at}</Text>
+      <Text fontSize='xs' mt={2}>Updated at: {repo.updated_at}</Text>
     </Box>
   )
 }

@@ -14,18 +14,15 @@ const SearchRepo = () => {
     <Box p={5}>
         <Box style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <SearchBar username={username} setUsername={setUsername}/>
-            {/* <Sort/> */}
-
         </Box>
-      <Results/>
-     
-      {
-        error && (
-          <Text fontSize='sm' mt={5} color='tomato'>{error}</Text>
-        )
-      }
 
-      
+        <Results/>
+        
+        {
+          error && (
+            <Text fontSize='sm' mt={5} color='tomato'>{error}</Text>
+          )
+        }
     </Box>
   )
 }
