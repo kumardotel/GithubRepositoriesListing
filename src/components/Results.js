@@ -34,7 +34,7 @@ const Results = () => {
   return (
     <Box >
         {
-            reposInfo && (
+            (!loading && reposInfo) && (
                 <Box>
                     <Box style={{display: 'flex', justifyContent: 'flex-end'}}>
                         <Select onChange={sortResult} w={200} size='sm'  placeholder='Sort by'>
